@@ -14,7 +14,7 @@ function StackNavigator() {
   return (
     <Stack.Navigator>
       <Stack.Screen
-        name="Home"
+        name="HomeScreen"
         component={HomeScreen}
         options={{ headerShown: false }}
       />
@@ -33,7 +33,7 @@ export default function App() {
       <NavigationContainer>
         <Tab.Navigator>
           <Tab.Screen
-            name="Home"
+            name="HomePage"
             component={StackNavigator}
             options={{
               headerShown: false,
