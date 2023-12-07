@@ -2,8 +2,8 @@ import { StyleSheet } from "react-native";
 
 export const S = StyleSheet.create({
   Wrapper: {
-    width: 100,
-    height: 200,
+    width: "40%",
+    height: 310,
     flex: 1,
     flexDirection: "column",
     cursor: "pointer",
@@ -12,13 +12,14 @@ export const S = StyleSheet.create({
     borderRadius: 7,
   },
   image: {
-    width: 100,
+    width: "100%",
+    height: 250,
     borderTopLeftRadius: 7,
     borderTopRightRadius: 7,
   },
   Decs: {
     width: "100%",
-    height: 80,
+    height: 50,
     flex: 1,
     flexDirection: "column",
     justifyContent: "center",
@@ -28,7 +29,7 @@ export const S = StyleSheet.create({
     backgroundColor: "rgba(255, 255, 255, 0.055)",
   },
   Title: {
-    fontSize: 1.2,
+    fontSize: 20,
     fontWeight: "bold",
     color: "white",
     overflow: "hidden",
