@@ -17,9 +17,7 @@ type DetailsScreenNavigationProp = NavigationProp<RootStackParamList>;
 
 function HomeScreen() {
   const { data } = useQuery("posts", fetchList);
-  const list: listProps[] = data.results;
-  const [isBack, setIsBack] = useState(false);
-  const navigation: DetailsScreenNavigationProp = useNavigation();
+  const list: listProps[] = data?.results;
 
   return (
     <View style={S.Wrapper}>
