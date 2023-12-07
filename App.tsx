@@ -4,25 +4,64 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
 import { QueryClient, QueryClientProvider } from "react-query";
+import HomeScreen from "./src/screen/HomeScreen/HomeScreen";
 
-// const Stack = createStackNavigator();
-// const Tab = createBottomTabNavigator();
-// const queryClient = new QueryClient();
+const Stack = createStackNavigator();
+const Tab = createBottomTabNavigator();
+const queryClient = new QueryClient();
 
-export default function App() {
+function StackNavigator() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <Stack.Navigator>
+      <Stack.Screen
+        name="Home"
+        component={HomeScreen}
+        options={{ headerShown: false }}
+      />
+      {/* <Stack.Screen
+        name="Detail"
+        component={DetailScreen}
+        options={{ headerShown: false }}
+      /> */}
+    </Stack.Navigator>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
+export default function App() {
+  return (
+    <QueryClientProvider client={queryClient}>
+      <NavigationContainer>
+        <Tab.Navigator>
+          <Tab.Screen
+            name="Home"
+            component={StackNavigator}
+            options={{
+              headerShown: false,
+              tabBarLabel: "홈",
+              // tabBarIcon: ({ focused }) =>
+              //   focused ? (
+              //     <Feather name="home" size={24} color="black" />
+              //   ) : (
+              //     <Feather name="home" size={24} color="gray" />
+              //   ),
+            }}
+          />
+          {/* <Tab.Screen
+          name="Create"
+          component={StackNavigator2}
+          options={{
+            tabBarLabel: "작성",
+            headerShown: false,
+            tabBarIcon: ({ focused }) =>
+            focused ? (
+              <Ionicons name="create" size={24} color="black" />
+              ) : (
+                <Ionicons name="create" size={24} color="gray" />
+                ),
+              }}
+            /> */}
+        </Tab.Navigator>
+      </NavigationContainer>
+    </QueryClientProvider>
+  );
+}
