@@ -4,8 +4,8 @@ import { CoverProps, MultiSelectProps } from "../../types/list";
 import { DetailsScreenNavigationProp } from "../../types/props";
 import { S } from "./styled";
 import { Image } from "expo-image";
-// import { CategoryBox } from "..";
-// import { CategoryColorArr } from "@/utils/CategoryArray";
+import CategoryBox from "../common/CategoryBox";
+import { CategoryColorArr } from "../../util/CategoryArray";
 
 const ListBox = ({
   cover,
@@ -28,14 +28,14 @@ const ListBox = ({
       <View style={S.Decs}>
         <Text style={S.Title}>{title}</Text>
         <View style={S.Categorys}>
-          {/* {category.map((i) => (
+          {category.map((i) => (
             <CategoryBox
               key={i.id}
               color={CategoryColorArr[i.color] ?? i.color}
               name={i.name}
               fontSize={"0.8rem"}
             />
-          ))} */}
+          ))}
         </View>
       </View>
     </View>

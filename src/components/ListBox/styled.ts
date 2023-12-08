@@ -37,7 +37,6 @@ export const S = StyleSheet.create({
   },
   Categorys: {
     width: "100%",
-    flex: 1,
     justifyContent: "flex-start",
     flexWrap: "wrap",
   },

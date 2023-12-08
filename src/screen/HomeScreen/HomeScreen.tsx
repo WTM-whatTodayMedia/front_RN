@@ -1,4 +1,4 @@
-import { Text, View, ScrollView, TouchableOpacity } from "react-native";
+import { Text, View, ScrollView } from "react-native";
 import { S } from "./Style";
 import { useQuery } from "react-query";
 import { fetchList } from "../../api/api";
