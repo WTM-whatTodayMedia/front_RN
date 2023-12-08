@@ -2,9 +2,8 @@ import { StyleSheet } from "react-native";
 
 export const S = StyleSheet.create({
   Wrapper: {
-    width: "40%",
-    height: 310,
-    flex: 1,
+    width: "48%",
+    height: 340,
     flexDirection: "column",
     cursor: "pointer",
     marginVertical: 15,
@@ -13,7 +12,7 @@ export const S = StyleSheet.create({
   },
   image: {
     width: "100%",
-    height: 250,
+    height: 280,
     borderTopLeftRadius: 7,
     borderTopRightRadius: 7,
   },

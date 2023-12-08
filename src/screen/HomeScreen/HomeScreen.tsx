@@ -11,25 +11,21 @@ function HomeScreen() {
 
   return (
     <View style={S.Wrapper}>
-      <ScrollView
-        style={S.List}
-        contentContainerStyle={{
-          flexDirection: "column",
-          flexWrap: "wrap",
-        }}
-      >
-        {list && list.length > 0 ? (
-          list.map((i, index) => (
-            <ListBox
-              key={index}
-              cover={i.cover}
-              title={i.properties.Name.title[0]?.text.content}
-              category={i.properties.Category.multi_select}
-            />
-          ))
-        ) : (
-          <Text>없음</Text>
-        )}
+      <ScrollView style={S.List} horizontal={false}>
+        <View style={S.StylegridView}>
+          {list && list.length > 0 ? (
+            list.map((i, index) => (
+              <ListBox
+                key={index}
+                cover={i.cover}
+                title={i.properties.Name.title[0]?.text.content}
+                category={i.properties.Category.multi_select}
+              />
+            ))
+          ) : (
+            <Text>없음</Text>
+          )}
+        </View>
       </ScrollView>
     </View>
   );
