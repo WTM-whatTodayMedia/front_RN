@@ -1,10 +1,10 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
 import { QueryClient, QueryClientProvider } from "react-query";
 import HomeScreen from "./src/screen/HomeScreen/HomeScreen";
+import { RecoilRoot } from "recoil";
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -29,24 +29,25 @@ function StackNavigator() {
 
 export default function App() {
   return (
-    <QueryClientProvider client={queryClient}>
-      <NavigationContainer>
-        <Tab.Navigator>
-          <Tab.Screen
-            name="HomePage"
-            component={StackNavigator}
-            options={{
-              headerShown: false,
-              tabBarLabel: "홈",
-              // tabBarIcon: ({ focused }) =>
-              //   focused ? (
-              //     <Feather name="home" size={24} color="black" />
-              //   ) : (
-              //     <Feather name="home" size={24} color="gray" />
-              //   ),
-            }}
-          />
-          {/* <Tab.Screen
+    <RecoilRoot>
+      <QueryClientProvider client={queryClient}>
+        <NavigationContainer>
+          <Tab.Navigator>
+            <Tab.Screen
+              name="HomePage"
+              component={StackNavigator}
+              options={{
+                headerShown: false,
+                tabBarLabel: "홈",
+                // tabBarIcon: ({ focused }) =>
+                //   focused ? (
+                //     <Feather name="home" size={24} color="black" />
+                //   ) : (
+                //     <Feather name="home" size={24} color="gray" />
+                //   ),
+              }}
+            />
+            {/* <Tab.Screen
           name="Create"
           component={StackNavigator2}
           options={{
@@ -60,8 +61,9 @@ export default function App() {
                 ),
               }}
             /> */}
-        </Tab.Navigator>
-      </NavigationContainer>
-    </QueryClientProvider>
+          </Tab.Navigator>
+        </NavigationContainer>
+      </QueryClientProvider>
+    </RecoilRoot>
   );
 }
