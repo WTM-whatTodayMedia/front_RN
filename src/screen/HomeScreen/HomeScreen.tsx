@@ -1,6 +1,5 @@
 import { Text, View, ScrollView } from "react-native";
 import { S } from "./Style";
-import { useQuery } from "react-query";
 import { fetchList, getFilterList } from "../../api/api";
 import { listProps } from "../../types/list";
 import ListBox from "../../components/ListBox";
@@ -8,17 +7,24 @@ import Header from "../../components/common/Header/Header";
 import { useEffect, useState } from "react";
 
 function HomeScreen() {
-  const { data } = useQuery("posts", fetchList);
-  const [list, setList] = useState<listProps[]>(data);
+  const [Initdata, setInitData] = useState<listProps[]>([]);
+  const [list, setList] = useState<listProps[]>([]);
 
   const onHandleCategoryClick = async (category: string) => {
     if (category === "영화" || category === "드라마") {
       const filterList: listProps[] = await getFilterList(category);
       setList(filterList);
-    } else {
+    } else setList(Initdata);
+  };
+
+  useEffect(() => {
+    async function initDataFun() {
+      const data: listProps[] = await fetchList();
+      setInitData(data);
       setList(data);
     }
-  };
+    initDataFun();
+  }, []);
 
   return (
     <View style={S.Wrapper}>
@@ -35,7 +41,7 @@ function HomeScreen() {
               />
             ))
           ) : (
-            <Text>없음</Text>
+            <Text>로딩중...</Text>
           )}
         </View>
       </ScrollView>

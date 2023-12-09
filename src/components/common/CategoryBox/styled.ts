@@ -7,7 +7,6 @@ export const S = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     borderRadius: 5,
-    // border: 2px solid ${(props) => props.color};
   },
   Text: {
     color: "#eeeaf3",
