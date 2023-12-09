@@ -4,10 +4,11 @@ import SegmentedControl from "@react-native-segmented-control/segmented-control"
 import { useState } from "react";
 import { theme } from "../../../util/color";
 
-function Header() {
-  const [category, setCategory] = useState("");
-  const onChangeText = (payload: string) => setCategory(payload);
-
+function Header({
+  onCategoryClick,
+}: {
+  onCategoryClick: (category: string) => void;
+}) {
   return (
     <View style={S.container}>
       <Text style={S.HeaderText}>WTM</Text>
@@ -16,9 +17,9 @@ function Header() {
         selectedIndex={0}
         tintColor={theme.mainColor}
         values={["전체", "영화", "드라마"]}
-        fontStyle={{ fontSize: 20 }}
+        fontStyle={{ fontSize: 15 }}
         backgroundColor={"#1F2326"}
-        onValueChange={onChangeText}
+        onValueChange={(payload) => onCategoryClick(payload)}
       />
     </View>
   );

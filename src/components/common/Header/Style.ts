@@ -19,6 +19,6 @@ export const S = StyleSheet.create({
   Radio: {
     backgroundColor: "white",
     width: 200,
-    paddingVertical: 20,
+    paddingVertical: 16,
   },
 });
