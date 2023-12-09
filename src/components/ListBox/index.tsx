@@ -1,4 +1,4 @@
-import { Text, View, ScrollView, TouchableOpacity } from "react-native";
+import { Text, View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { CoverProps, MultiSelectProps } from "../../types/list";
 import { DetailsScreenNavigationProp } from "../../types/props";

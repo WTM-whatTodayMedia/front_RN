@@ -1,4 +1,5 @@
-import { StyleSheet } from "react-native";
+import { Platform, StyleSheet } from "react-native";
+import Constants from "expo-constants";
 
 export const S = StyleSheet.create({
   Wrapper: {
@@ -9,6 +10,7 @@ export const S = StyleSheet.create({
     flexDirection: "column",
     alignItems: "center",
     backgroundColor: "rgba(0, 0, 0, 0.9)",
+    marginTop: Platform.OS === "ios" ? Constants.statusBarHeight : 0,
   },
   List: {
     flex: 1,
