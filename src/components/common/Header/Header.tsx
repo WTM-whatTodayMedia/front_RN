@@ -1,7 +1,6 @@
 import { Text, View } from "react-native";
 import { S } from "./Style";
 import SegmentedControl from "@react-native-segmented-control/segmented-control";
-import { useState } from "react";
 import { theme } from "../../../util/color";
 
 function Header({

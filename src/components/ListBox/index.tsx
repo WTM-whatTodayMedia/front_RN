@@ -21,7 +21,7 @@ const ListBox = ({
   return (
     <View style={S.Wrapper}>
       <Image
-        source={cover?.external?.url || cover?.file?.url || ""}
+        source={cover?.external?.url ?? cover?.file?.url ?? ""}
         alt="포스터 이미지"
         style={S.image}
       />
