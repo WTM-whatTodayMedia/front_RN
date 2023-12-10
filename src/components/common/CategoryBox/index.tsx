@@ -11,11 +11,7 @@ const CategoryBox = ({
   fontSize: string;
 }) => {
   return (
-    <View
-      style={S.Wrapper}
-      // color={color === "default" ? "gray" : color}
-      // style={{ fontSize: fontSize }}
-    >
+    <View style={S.Wrapper}>
       <Text style={S.Text}>{name}</Text>
     </View>
   );
